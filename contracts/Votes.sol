@@ -24,7 +24,7 @@ contract Votes {
     mapping (uint256 => Vote) vote;
     uint scrutin_id = 0;
 
-    function createVote(string memory _name, address[] memory _candidates, address[] memory _voters) public {
+    function submitVote(string memory _name, address[] memory _candidates, address[] memory _voters) public {
         vote[scrutin_id].name = _name;
         for (uint256 i = 0; i < _candidates.length; i++) {
             Candidate memory c;
@@ -40,6 +40,6 @@ contract Votes {
         scrutin_id++;
     }
 
-    
+
 
 }
